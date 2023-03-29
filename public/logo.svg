@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 655.15 512">
+  <defs>
+    <clipPath id="prefix__a" transform="translate(74.19)">
+      <rect class="prefix__a" width="512" height="512" rx="41.01" />
+    </clipPath>
+    <clipPath id="prefix__b" transform="translate(74.19)">
+      <rect class="prefix__b" x="54" y="161" width="229" height="177" rx="12" />
+    </clipPath>
+    <style>
+      .prefix__a {
+        fill: #4294ff
+      }
+
+      .prefix__b {
+        fill: #405ba9
+      }
+
+      .prefix__d {
+        fill: #e6f8ff
+      }
+
+      .prefix__i {
+        fill: #969696
+      }
+    </style>
+  </defs>
+  <rect class="prefix__a" x="74.19" width="512" height="512" rx="41.01" />
+  <g clip-path="url(#prefix__a)">
+    <rect class="prefix__d" x="103.44" y="118.07" width="451.4" height="364.67" rx="12" />
+    <path fill="#606060" d="M0 0h655.15v79.41H0z" />
+    <circle cx="132.18" cy="41.62" r="16.2" fill="#e72d00" />
+    <circle cx="233.53" cy="41.62" r="16.2" fill="#00ff1c" />
+    <circle cx="182.86" cy="41.62" r="16.2" fill="#fff08b" />
+  </g>
+  <rect class="prefix__i" x="384.19" y="161" width="131" height="14" rx="7" />
+  <rect class="prefix__i" x="384.19" y="212" width="131" height="14" rx="7" />
+  <rect class="prefix__i" x="384.19" y="263" width="131" height="14" rx="7" />
+  <rect class="prefix__i" x="384.19" y="314" width="131" height="14" rx="7" />
+  <rect x="386.92" y="362" width="128.27" height="77" rx="12" fill="#ff002b" />
+  <rect class="prefix__b" x="128.19" y="161" width="229" height="177" rx="12" />
+  <g clip-path="url(#prefix__b)">
+    <path fill="#464646" d="M99.94 314l105.89-88 80.98 64 47.52-34 40.73 33-2.23 62-274.8 2 1.91-39z" />
+    <ellipse class="prefix__d" cx="277.88" cy="212" rx="12.29" ry="11" />
+  </g>
+  <rect class="prefix__i" x="128.19" y="362" width="229" height="14" rx="7" />
+  <rect class="prefix__i" x="128.19" y="425" width="229" height="14" rx="7" />
+  <rect class="prefix__i" x="128.19" y="393" width="229" height="14" rx="7" />
+</svg>

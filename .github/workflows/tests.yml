@@ -5,7 +5,9 @@ on: pull_request
 jobs:
   rspec:
     name: RSpec
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1

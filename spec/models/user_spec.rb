@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Paul', photo: 'http://jun.png', bio: 'Carpenter')}
+  subject { User.new(name: 'Paul', photo: 'http://jun.png', bio: 'Carpenter') }
 
-  before {subject.save}
+  before { subject.save }
 
   context 'When validating name attribute' do
     it 'name should be present' do
@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
 
   context 'When testing recent_posts method' do
     it 'should return the last three posts' do
-      first_post = Post.create(author: subject, title: 'First seed post', text: 'Lorem Ipsum is simply dummy text.')
+      Post.create(author: subject, title: 'First seed post', text: 'Lorem Ipsum is simply dummy text.')
       second_post = Post.create(author: subject, title: 'Second seed post', text: 'Lorem Ipsum is simply dummy text.')
       third_post = Post.create(author: subject, title: 'Third seed post', text: 'Lorem Ipsum is simply dummy text.')
       fourth_post = Post.create(author: subject, title: 'Fourth seed post', text: 'Lorem Ipsum is simply dummy text.')

@@ -8,12 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
-      BLOG_APP_TEST_DB_URL: postgres://developer:test@localhost/blog_app_test
+      BLOG_APP_TEST_DB_URL: postgres://postgres:postgres@localhost/blog_app_test
     services:
       postgres:
         image: postgres:latest
         ports:
         - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2

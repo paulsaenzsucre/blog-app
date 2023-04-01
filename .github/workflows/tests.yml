@@ -8,14 +8,32 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
+      BLOG_APP_TEST_DB_URL: postgres://postgres:postgres@localhost/blog_app_test
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+        - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.1.x
-      - name: Setup RSpec
+      - name: Install postgres client
+        run: sudo apt-get install libpq-dev
+      - name: Install Gemfile
+        run: gem install bundler
+      - name: Instal dependencies
+        run: bundle install
+      - name: Create database
         run: |
-          [ -f Gemfile ] && bundle
-          gem install --no-document rspec -v '>=3.0, < 4.0'
+          bundler exec rails db:create RAILS_ENV=test
+          bundler exec rails db:migrate RAILS_ENV=test
       - name: RSpec Report
         run: rspec --force-color --format documentation
+        

@@ -23,7 +23,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.x
+          ruby-version: 3.2.2
       - name: Install postgres client
         run: sudo apt-get install libpq-dev
       - name: Install Gemfile

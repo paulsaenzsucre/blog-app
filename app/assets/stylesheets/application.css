@@ -105,16 +105,15 @@ button {
 
 .div-center {
   text-align: center;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  gap: 2rem
+  gap: 2rem;
 }
 
 .see-all {
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .text-bold {
   font-weight: bold;
 }
-

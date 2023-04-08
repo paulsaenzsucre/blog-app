@@ -8,16 +8,16 @@ class Post < ApplicationRecord
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
-  end  
+  end
 
   def previous
-    user_posts = self.author.posts.order(id: :desc)
+    user_posts = author.posts.order(id: :desc)
     pointer = user_posts.find_index(self)
     pointer.zero? ? 0 : user_posts[pointer - 1].id
   end
 
   def next
-    user_posts = self.author.posts.order(id: :desc)
+    user_posts = author.posts.order(id: :desc)
     pointer = user_posts.find_index(self)
     pointer == user_posts.length - 1 ? 0 : user_posts[pointer + 1].id
   end

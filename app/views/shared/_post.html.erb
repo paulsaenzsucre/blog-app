@@ -1,0 +1,15 @@
+<article>
+  <section>
+    <h3>Post <%= "##{post.id}#{brief ? '' : ' by ' + post.author.name}" %></h3>
+    <div>
+      <p><%= brief ? post.text.truncate(380) : post.text %></p>
+      <p class="align-rigth">Comments: <%= post.commentsCounter %>, Likes: <%= post.likesCounter %></p>
+    </div>
+  </section>
+  
+  <% if(comment_show) %>
+    <section>
+      <%= brief ? (render partial: "shared/comment", collection: post.recent_comments, spacer_template: "shared/spacer")
+        : (render partial: "shared/comment", collection: post.comments.order(id: :desc), spacer_template: "shared/spacer") %>
+  <% end %>
+</article>

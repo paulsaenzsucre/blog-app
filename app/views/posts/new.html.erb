@@ -1,0 +1,16 @@
+<h2>New Post</h2>
+<%= form_with model: @post, url: user_posts_path do |form| %>
+  <div class="form-cont">
+    <div class="form-field">
+      <%= form.label :title, :class => 'form-title' %> <br>
+      <%= form.text_field :title, required: true, :class => 'form-text-field' %>
+    </div>
+
+    <div class="form-field">
+      <%= form.label :post_text, :class => 'form-title' %> <br>
+      <%= form.text_area :text, required: true, :class => 'form-text-area' %>
+    </div>    
+
+    <%= form.submit %>
+  </div>
+<% end %>

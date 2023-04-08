@@ -8,5 +8,6 @@
       <h2><%= user.name %></h2>
     <% end %>
     <p class="align-rigth">Number of post: <%= user.posts.size %></p>
+    <%= user.current_user == user ? (button_to "New Post", new_user_post_path(user.current_user), method: :get) : nil %>
   </div>
 </div>

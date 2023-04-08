@@ -4,6 +4,7 @@
     <div>
       <p><%= brief ? post.text.truncate(380) : post.text %></p>
       <p class="align-rigth">Comments: <%= post.commentsCounter %>, Likes: <%= post.likesCounter %></p>
+      <%= button_to "New Comment", new_user_post_comment_path(post.author.id,post.id), method: :get %>
     </div>
   </section>
   

@@ -1,1 +1,10 @@
-<p>Here is a list of post for a given user</p>
+<div>
+  <%= render "shared/user_card", user: @user %>
+  
+  <%= render partial: "shared/post", collection: @user.recent_posts, locals:{brief: true, comment_show: true} %>
+
+  <div class="flex-row div-center">
+    <%= button_to "Back", user_path(@user.id), method: :get %>
+    <%= button_to "Pagination", user_post_path(@user.id,@user.posts.order(id: :desc)[0].id), method: :get %>
+  </div>
+</div>

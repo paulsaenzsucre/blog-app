@@ -11,11 +11,6 @@ RSpec.describe 'Users', type: :request do
       get '/users'
       expect(response).to render_template(:index)
     end
-
-    it 'the response.body should includes correct placeholder text.' do
-      get '/users'
-      expect(response.body).to include('<p>Here is a list of users</p>')
-    end
   end
 
   context 'When testing GET user/show request ' do
@@ -27,11 +22,6 @@ RSpec.describe 'Users', type: :request do
     it 'should render the :show template' do
       get '/users/1'
       expect(response).to render_template(:show)
-    end
-
-    it 'the response.body should includes correct placeholder text.' do
-      get '/users/1'
-      expect(response.body).to include('<p>Here is a single user</p>')
     end
   end
 end

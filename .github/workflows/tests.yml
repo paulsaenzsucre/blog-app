@@ -34,6 +34,7 @@ jobs:
         run: |
           bundler exec rails db:create RAILS_ENV=test
           bundler exec rails db:migrate RAILS_ENV=test
+          bundler exec rails db:seed RAILS_ENV=test
       - name: RSpec Report
         run: rspec --force-color --format documentation
         

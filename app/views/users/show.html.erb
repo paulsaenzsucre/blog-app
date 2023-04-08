@@ -1,1 +1,20 @@
-<p>Here is a single user</p>
+<div class="user-show">
+  <div>
+    <article>
+      <%= render "shared/user_card", user: @user %>
+        <br>
+      <section>
+        <h3>Bio</h3>
+        <p><%= @user.bio %></p>
+      </section>
+    </article>
+
+    <%= render partial: "shared/post", collection: @user.recent_posts, locals: {brief: true, comment_show: false} %>
+
+    <div class=" flex-row div-center">
+      <%= button_to "Back", users_path, method: :get %>
+      <%= button_to "See all post", user_posts_path(@user.id), method: :get %>      
+    </div>
+    
+  </div>
+</div>

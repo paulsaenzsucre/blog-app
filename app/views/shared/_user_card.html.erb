@@ -1,0 +1,12 @@
+<div class="flex-row user-card">
+  <%= link_to user_path(user.id) do
+    image_tag(user.photo, class: "user-img")
+  end %>  
+
+  <div class="user-info">
+    <%= link_to user_path(user.id) do %>
+      <h2><%= user.name %></h2>
+    <% end %>
+    <p class="align-rigth">Number of post: <%= user.posts.size %></p>
+  </div>
+</div>

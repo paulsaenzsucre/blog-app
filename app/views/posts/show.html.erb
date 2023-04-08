@@ -1,1 +1,9 @@
-<p>Here is a single post for a given user</p>
+<article>
+  <%= render partial: "shared/post", locals: {post: @post, brief: false, comment_show: true} %>
+</article>
+
+<div class="flex-row div-center">
+  <%= button_to "Back", user_posts_path(@post.author.id), method: :get %>
+  <%= @post.previous.zero? ? nil : (button_to "Previous", user_post_path(@post.author.id,@post.previous), method: :get) %>
+  <%= @post.next.zero? ? nil : (button_to "Next", user_post_path(@post.author.id,@post.next), method: :get) %>
+</div>

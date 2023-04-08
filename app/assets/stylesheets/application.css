@@ -51,7 +51,6 @@ li {
 
 input[type=submit],
 button {
-  margin-left: 1rem;
   border: 0.125rem solid black;
   outline: none;
   background: none;
@@ -116,4 +115,26 @@ button {
 
 .text-bold {
   font-weight: bold;
+}
+
+.form-field {  
+  margin: 1.5rem 0;
+}
+
+.form-title {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.form-text-field {
+  display: block;
+  border: var(--border);
+  width: 100%;
+}
+
+.form-text-area {
+  display: block;
+  border: var(--border);
+  width: 100%;
+  height: 8rem;
 }

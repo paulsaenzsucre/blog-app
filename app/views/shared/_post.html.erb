@@ -14,7 +14,7 @@
   
   <% if(comment_show) %>
     <section>
-      <%= brief ? (render partial: "shared/comment", collection: post.recent_comments, spacer_template: "shared/spacer")
-        : (render partial: "shared/comment", collection: post.comments.order(id: :desc), spacer_template: "shared/spacer") %>
+      <%= brief ? (render partial: "shared/comment", collection: post.recent_comments.includes(:author), spacer_template: "shared/spacer")
+        : (render partial: "shared/comment", collection: post.comments.order(id: :desc).includes(:author), spacer_template: "shared/spacer") %>
   <% end %>
 </article>

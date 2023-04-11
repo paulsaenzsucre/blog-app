@@ -1,6 +1,6 @@
 <article>
   <section>
-    <h3>Post <%= "##{post.id}#{brief ? '' : ' by ' + post.author.name}" %></h3>
+    <h3>  <%= link_to "Post ##{post.id}#{brief ? '' : ' by ' + post.author.name}", user_post_path(post.author, post) %> </h3>
     <div>
       <p><%= brief ? post.text.truncate(380) : post.text %></p>
       <p class="align-rigth">Comments: <%= post.commentsCounter %>, Likes: <%= post.likesCounter %></p>

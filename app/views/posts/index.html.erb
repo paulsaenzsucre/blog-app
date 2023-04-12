@@ -1,7 +1,7 @@
 <div>
   <%= render "shared/user_card", user: @user %>
   
-  <%= render partial: "shared/post", collection: @user.recent_posts, locals:{brief: true, comment_show: true} %>
+  <%= render partial: "shared/post", collection: @user.recent_posts.includes(:author), locals:{brief: true, comment_show: true} %>
 
   <div class="flex-row div-center">
     <%= button_to "Back", user_path(@user.id), method: :get %>

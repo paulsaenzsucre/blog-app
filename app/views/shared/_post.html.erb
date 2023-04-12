@@ -1,6 +1,6 @@
 <article>
   <section>
-    <h3>Post <%= "##{post.id}#{brief ? '' : ' by ' + post.author.name}" %></h3>
+    <h3>  <%= link_to "Post ##{post.id}#{brief ? '' : ' by ' + post.author.name}", user_post_path(post.author, post) %> </h3>
     <div>
       <p><%= brief ? post.text.truncate(380) : post.text %></p>
       <p class="align-rigth">Comments: <%= post.commentsCounter %>, Likes: <%= post.likesCounter %></p>
@@ -14,7 +14,7 @@
   
   <% if(comment_show) %>
     <section>
-      <%= brief ? (render partial: "shared/comment", collection: post.recent_comments, spacer_template: "shared/spacer")
-        : (render partial: "shared/comment", collection: post.comments.order(id: :desc), spacer_template: "shared/spacer") %>
+      <%= brief ? (render partial: "shared/comment", collection: post.recent_comments.includes(:author), spacer_template: "shared/spacer")
+        : (render partial: "shared/comment", collection: post.comments.order(id: :desc).includes(:author), spacer_template: "shared/spacer") %>
   <% end %>
 </article>

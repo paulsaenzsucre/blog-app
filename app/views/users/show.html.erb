@@ -9,11 +9,11 @@
       </section>
     </article>
 
-    <%= render partial: "shared/post", collection: @user.recent_posts, locals: {brief: true, comment_show: false} %>
+    <%= render partial: "shared/post", collection: @user.recent_posts.includes(:author), locals: {brief: true, comment_show: false} %>
 
     <div class=" flex-row div-center">
       <%= button_to "Back", users_path, method: :get %>
-      <%= button_to "See all post", user_posts_path(@user.id), method: :get %>      
+      <%= button_to "See all post", user_posts_path(@user.id), method: :get %>
     </div>
     
   </div>

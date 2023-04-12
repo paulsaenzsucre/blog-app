@@ -1,6 +1,6 @@
 <div class="flex-row user-card">
   <%= link_to user_path(user.id) do
-    image_tag(user.photo, class: "user-img")
+    user.photo.nil? ? image_tag("https://th.bing.com/th/id/R.509daf002adcc4111234623c1cf79c91?rik=KDCn%2fZO9pDSQqg&pid=ImgRaw&r=0", class: "user-img"): image_tag(user.photo, class: "user-img")
   end %>  
 
   <div class="user-info">

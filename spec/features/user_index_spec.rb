@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'users/index.html.erb', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg', bio: 'Friendly guy that leaves as a demon slayer.')
-    @user2 = User.create(name: 'Nezuko Kamado', photo: 'https://static.zerochan.net/Kamado.Nezuko.full.2843321.jpg', bio: 'Tanjiro\'s younger sister who turns into a demon.')
+    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg',
+                        bio: 'Friendly guy that leaves as a demon slayer.')
+    @user2 = User.create(name: 'Nezuko Kamado', photo: 'https://static.zerochan.net/Kamado.Nezuko.full.2843321.jpg',
+                         bio: 'Tanjiro\'s younger sister who turns into a demon.')
     visit users_path
   end
 
@@ -23,8 +25,8 @@ RSpec.describe 'users/index.html.erb', type: :feature do
   end
 
   it 'redirects me to that users page' do
-    link = find("a h2", text: "#{@user.name}")
+    link = find('a h2', text: @user.name.to_s)
     link.click
-    expect(page).to have_current_path(users_path())
+    expect(page).to have_current_path(users_path)
   end
 end

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'users/show.html.erb', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg', bio: 'Friendly guy that leaves as a demon slayer.')
+    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg',
+                        bio: 'Friendly guy that leaves as a demon slayer.')
     @post = Post.create(author: @user, title: 'My first post', text: 'no view')
     @post2 = Post.create(author: @user, title: 'My second post',
                          text: 'This battle was agains my own sister that was converted to demon')
@@ -43,7 +44,7 @@ RSpec.describe 'users/show.html.erb', type: :feature do
   end
 
   it 'redirects me to all posts' do
-    link = find("button", text: "See all post")
+    link = find('button', text: 'See all post')
     link.click
     expect(page).to have_current_path(user_posts_path(@user.id))
   end

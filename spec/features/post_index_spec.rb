@@ -2,10 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'posts/index.html.erb', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg', bio: 'Friendly guy that leaves as a demon slayer.')
-    @post = Post.create(author: @user, title: 'My first post', text: 'This battle was agains my own sister that was converted to demon1')
-    @post2 = Post.create(author: @user, title: 'My second post', text: 'This battle was agains my own sister that was converted to demon2')
-    @post3 = Post.create(author: @user, title: 'My third post', text: 'This battle was agains my own sister that was converted to demon3')
+    @user = User.create(name: 'Tanjiro Kamado', photo: 'https://static.zerochan.net/Kamado.Tanjirou.full.2705519.jpg',
+                        bio: 'Friendly guy that leaves as a demon slayer.')
+    @post = Post.create(author: @user, title: 'My first post',
+                        text: 'This battle was agains my own sister that was converted to demon1')
+    @post2 = Post.create(author: @user, title: 'My second post',
+                         text: 'This battle was agains my own sister that was converted to demon2')
+    @post3 = Post.create(author: @user, title: 'My third post',
+                         text: 'This battle was agains my own sister that was converted to demon3')
     @comment = Comment.create(author: @user, post: @post, text: 'Lorem ipsum')
     @comment2 = Comment.create(author: @user, post: @post, text: 'Lorem ipsum2')
     @comment3 = Comment.create(author: @user, post: @post, text: 'Lorem ipsum3')

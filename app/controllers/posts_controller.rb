@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @user = User.find(params[:user_id])
   end
@@ -22,6 +24,13 @@ class PostsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @post.destroy
+    redirect_to user_posts_path(@user)
   end
 
   private

@@ -7,6 +7,11 @@
       <div class="flex-row post-btn">
         <%= button_to "New Comment", new_user_post_comment_path(post.author.id,post.id), method: :get %>
         <%= button_to "Add Like", user_post_likes_path(post.author.id,post.id), method: :post %>
+
+        <% if can? :destroy, post %>
+          <%= button_to "Delete Post", user_post_path(post.author,post), method: :delete, data: { turbo_confirm: "Are you sure?" }  %>
+        <% end %>
+        
       </div>
       
     </div>

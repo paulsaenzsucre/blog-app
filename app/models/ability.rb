@@ -13,7 +13,7 @@ class Ability
     can :destroy, Post, :author_id => user.id
     can :read, Post
     can :create, Post
-    can :destroy, Comment, :author_id => user.id
+    can :destroy, Comment, :user_id => user.id
     can :read, Comment
     can :create, Comment
     

@@ -139,6 +139,10 @@ button {
   height: 8rem;
 }
 
+.form-actions {
+  padding: 1rem 0;
+}
+
 .post-btn {
   gap: 2rem;
 }

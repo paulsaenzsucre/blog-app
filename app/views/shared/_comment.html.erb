@@ -1,6 +1,9 @@
-<li>
+<li class = "flex-row">
   <p>
     <span class="text-bold"><%= "#{comment.author.name} : " %></span>
     <%= "#{comment.text}" %>
   </p>
+  <% if can? :destroy, comment %>
+          <%= button_to "Delete Comment", user_post_comment_path(comment.author, comment.post, comment), method: :delete, data: { turbo_confirm: "Are you sure?" }  %>
+  <% end %>
 </li>

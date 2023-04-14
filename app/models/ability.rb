@@ -13,10 +13,13 @@ class Ability
     can :destroy, Post, :author_id => user.id
     can :read, Post
     can :create, Post
-    
+    can :destroy, Comment, :author_id => user.id
+    can :read, Comment
+    can :create, Comment
     
     return unless user.admin?
     can :manage, :all
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
